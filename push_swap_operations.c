@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_lib.h"
+#include "./push_swap_lib.h"
 
 void	sa_swap(t_node **root)
 {

@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_lib.h"
+#include "./push_swap_lib.h"
 
-int init_list(t_node **t_node, int len)
-{
-    *t_node = malloc(len * sizeof(t_node));
-    if(!*t_node)
-        return (0);
-    return (1);
-}
+// int init_list(t_node **t_node, int len)
+// {
+//     *t_node = malloc(len * sizeof(t_node));
+//     if(!*t_node)
+//         return (0);
+//     return (1);
+// }
 
 t_node	*new_list(int data)
 {
-	t_node	current;
+	t_node	*current;
 
 	current = malloc(sizeof(t_node));
 	if (!current)
@@ -37,11 +37,12 @@ int	main(int argc, char **argv)
     t_node *stack_a;
     t_node *stack_b;
     t_node *tmp;
-    
-	init_list(&tmp, list_len(stack_a));
+	t_node *current;
+	t_node *root;
+	int data;
 
-	
-    printf("longueur de liste A : %d", list_len(stack_a));
+	data = 0;
+    // printf("longueur de liste A : %d", list_len(stack_a));
 	// 1st element in the list + next one set to NULL
 	current -> data = 123;
 	//adding 1 elements 1 by 1 in list

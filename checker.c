@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_lib.h"
+#include "./push_swap_lib.h"
 
 int list_len(t_node *root)
 {

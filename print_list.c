@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_lib.h"
+#include "./push_swap_lib.h"
 
 void	printit(t_node	*root, t_node	*current)
 {
@@ -22,6 +22,6 @@ void	printit(t_node	*root, t_node	*current)
 	{
 		printf("%d : %d\n", i, current->data);
 		i++;
-		current = current->next;
+		current->next;
 	}
 }

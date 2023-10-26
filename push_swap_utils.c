@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_lib.h"
+#include "./push_swap_lib.h"
 
 //Adds node to list
 void	add_node(t_node **root, int value)

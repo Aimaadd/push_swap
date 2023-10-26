@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_LIB_H
-#define PUSH_SWAP_LIH_H
+# define PUSH_SWAP_LIB_H
 
-# include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
@@ -21,11 +20,8 @@
 
 typedef struct node 
 {
-    t_node	    *root;
-	t_node	    *current;
-	t_node	    *next;
-	int			data;
-	struct node	*next;
+	struct node  	*next;
+	int				data;
 }	t_node;
 
 int     list_len(t_node *root);
@@ -34,4 +30,4 @@ void	swap_nodes(t_node **root, int x, int y);
 void	printit(t_node	*root, t_node	*current);
 void	sa_swap(t_node **root);
 
-# endif
+#endif

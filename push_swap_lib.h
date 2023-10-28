@@ -17,17 +17,19 @@
 # include <limits.h>
 # include <stdlib.h>
 
-
-typedef struct node 
+typedef struct node
 {
-	struct node  	*next;
-	int				data;
+	struct node	*next;
+	struct node	*prev;
+	int			data;
 }	t_node;
 
-int     list_len(t_node *root);
+int		list_len(t_node *root);
 void	add_node(t_node **root, int value);
-void	swap_nodes(t_node **root, int x, int y);
+void	sa_swap_nodes(t_node **root);
 void	printit(t_node	*root, t_node	*current);
 void	sa_swap(t_node **root);
+void	push_node(t_node **root, int value);
+t_node	remove_node(t_node **root, int value);
 
 #endif

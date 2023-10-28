@@ -12,16 +12,16 @@
 
 #include "./push_swap_lib.h"
 
-int list_len(t_node *root)
+int	list_len(t_node *root)
 {
-    int i;
-    t_node *current;
+	int		i;
+	t_node	*current;
 
-    i = 0;
-        while(current != NULL)
-        {
-            i++;
-            current -> next;
-        }
-    return (i);
+	i = 0;
+	while (current != NULL)
+	{
+		i++;
+		current = current -> next;
+	}
+	return (i);
 }

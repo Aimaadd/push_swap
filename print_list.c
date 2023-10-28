@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap_lib.h"
+#include "push_swap_lib.h"
 
 void	printit(t_node	*root, t_node	*current)
 {
 	int		i;
 
-	i = 0;
+	i = 1;
 	current = root;
-	while (current != NULL) 
+	while (current != NULL)
 	{
 		printf("%d : %d\n", i, current->data);
 		i++;
-		current->next;
+		current = current -> next;
 	}
 }

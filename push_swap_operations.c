@@ -46,7 +46,7 @@ void	sa_swap(t_node **root)
 	curr_y -> data = tmp;
 	printf("after head : %d\n", curr_x->data);
 	printf("next : %d\n", curr_y->data);
-	printit(*root, curr_x);
+	printit(*root);
 }
 
 void	push_node(t_node **root, int value)

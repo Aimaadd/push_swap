@@ -12,16 +12,19 @@
 
 #include "push_swap_lib.h"
 
-void	printit(t_node	*root, t_node	*current)
+void	printit(t_node	*root)
 {
+	t_node *current;
 	int		i;
 
 	i = 1;
 	current = root;
-	while (current != NULL)
+	while (current)
 	{
-		printf("%d : %d\n", i, current->data);
+		printf("%d : %d\n", i, current -> data);
 		i++;
-		current = current -> next;
+		current = current->next;
+		if (current == root)
+			break;
 	}
 }

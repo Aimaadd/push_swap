@@ -12,6 +12,7 @@
 
 #include "./push_swap_lib.h"
 
+// TODO: update for doubly linked list (last -> next == *root)
 int	list_len(t_node *root)
 {
 	int		i;

@@ -25,9 +25,10 @@ typedef struct node
 }	t_node;
 
 int		list_len(t_node *root);
-void	add_node(t_node **root, int value);
+t_node	*add_node(t_node **root, int value);
+t_node	*create_node(int value);
 void	sa_swap_nodes(t_node **root);
-void	printit(t_node	*root, t_node	*current);
+void	printit(t_node	*root);
 void	sa_swap(t_node **root);
 void	push_node(t_node **root, int value);
 t_node	remove_node(t_node **root, int value);

@@ -14,7 +14,7 @@
 
 void	printit(t_node	*root)
 {
-	t_node *current;
+	t_node	*current;
 	int		i;
 
 	i = 1;
@@ -25,6 +25,6 @@ void	printit(t_node	*root)
 		i++;
 		current = current->next;
 		if (current == root)
-			break;
+			break ;
 	}
 }

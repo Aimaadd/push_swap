@@ -38,30 +38,29 @@ void	sa_swap(t_node **root)
 
 	curr_x = *root;
 	curr_y = curr_x->next;
-	printf("original head : %d\n", curr_x->data);
-	printf("original next : %d\n", curr_y->data);
 	tmp = curr_x -> data;
 	printf("head tmp : %d\n", tmp);
 	curr_x -> data = curr_y -> data;
 	curr_y -> data = tmp;
-	printf("after head : %d\n", curr_x->data);
-	printf("next : %d\n", curr_y->data);
 	printit(*root);
 }
 
-void	push_node(t_node **root, int value)
+int	push_node(t_node *src, t_node *dest)
 {
-	t_node	*curr_x;
-	t_node	*curr_y;
+	int		curr;
+	int		tmp;
 
-	curr_x = malloc(sizeof(t_node));
-	if (!curr_x)
-		return ;
-	curr_x -> data = value;
-	curr_x -> next = *root;
-	*root = curr_x;
-	/*Récupérer le premier élément de la stack 
-	a ou b et la pull sur la stack actuelle*/
+	if (!src)
+		return (0);
+	curr = src->data;
+	if (!dest)
+	{
+		create_node(0);
+		tmp = pop_first(&src);
+		add_node(&dest, 0);
+	}
+	dest->data = curr;
+	return (1);
 }
 
 void	rotate_node(t_node **root)
@@ -72,3 +71,30 @@ void	rotate_node(t_node **root)
 	curr_x = *root;
 	add_node(root, curr_x -> data);
 }
+
+void	sa_swap_nodes(t_node **root)
+{
+	t_node	*curr_x;
+	t_node	*curr_y;
+	t_node	*next_y;
+	t_node	*last;
+
+	if (*root == NULL || (*root)-> next == NULL || (*root)->next == *root)
+		return ;
+	curr_x = *root;
+	curr_y = (*root)->next;
+	next_y = (*root)->next->next;
+	last = curr_x->prev;
+	curr_y->next = curr_x;
+	curr_x->next = next_y;
+	curr_x->prev = curr_y;
+	curr_y->prev = last;
+	if (next_y && next_y != *root)
+		next_y->prev = curr_x;
+	last->next = curr_y;
+	*root = curr_y;
+}
+/*
+Je voudrais que la root soit en fin de liste et que last soit en 
+debut de liste
+*/

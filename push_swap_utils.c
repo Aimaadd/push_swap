@@ -34,7 +34,6 @@ t_node	*add_node(t_node **root, int value)
 	node = create_node(value);
 	if (!node)
 		return (NULL);
-
 	if (!*root)
 	{
 		*root = node;
@@ -58,36 +57,23 @@ t_node	*create_node(int value)
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
-
 	new_node->data = value;
 	new_node->prev = NULL;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-void	sa_swap_nodes(t_node **root)
+t_node	pop_first(t_node **root)
 {
-	t_node	*curr_x;
-	t_node	*curr_y;
-	t_node	*next_y;
-	t_node	*last;
+	t_node	*tmp;
 
-	if (*root == NULL || (*root)-> next == NULL || (*root)->next == *root)
+	if (!*root)
 		return ;
-	curr_x = *root;
-	curr_y = (*root)->next;
-	next_y = (*root)->next->next;
-	last = curr_x->prev;
-
-	curr_y->next = curr_x;
-	curr_x->next = next_y;
-
-	curr_x->prev = curr_y;
-	curr_y->prev = last;
-
-	if (next_y && next_y != *root)
-		next_y->prev = curr_x;
-	last->next = curr_y;
-
-	*root = curr_y;
+	tmp = *root;
+	*root = (*root)->next;
+	if (!*root)
+	{
+		(*root)->prev = NULL;
+	}
+	return (*tmp);
 }

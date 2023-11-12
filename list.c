@@ -19,7 +19,6 @@ int	main(int argc, char **argv)
 {
 	static t_node	*stack_a = NULL;
 	static t_node	*stack_b = NULL;
-	t_node			*current;
 
 	if (!add_node(&stack_a, 14))
 		return (1);
@@ -27,10 +26,13 @@ int	main(int argc, char **argv)
 		return (1);
 	if (!add_node(&stack_a, 144))
 		return (1);
-
 	printit(stack_a);
 	sa_swap_nodes(&stack_a);
 	printf("----swap-----\n");
 	printit(stack_a);
+	printf("stack B\n");
+	push_node(stack_a, stack_b);
+	printit(stack_b);
+	// printit(stack_a);
 	return (0);
 }

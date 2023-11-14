@@ -63,17 +63,17 @@ t_node	*create_node(int value)
 	return (new_node);
 }
 
-t_node	pop_first(t_node **root)
+void	pop_first(t_node **root)
 {
-	t_node	*tmp;
+	int	*tmp;
 
 	if (!*root)
 		return ;
-	tmp = *root;
+	tmp = &(*root)->data;
 	*root = (*root)->next;
 	if (!*root)
 	{
 		(*root)->prev = NULL;
 	}
-	return (*tmp);
+	return ;
 }

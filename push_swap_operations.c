@@ -45,22 +45,21 @@ void	sa_swap(t_node **root)
 	printit(*root);
 }
 
-int	push_node(t_node *src, t_node *dest)
+void	push_node(t_node **src, t_node **dest)
 {
-	int		curr;
+	t_node	*curr_src;
+	t_node	*curr_dest;
 	int		tmp;
 
 	if (!src)
-		return (0);
-	curr = src->data;
+		return ;
 	if (!dest)
-	{
-		create_node(0);
-		tmp = pop_first(&src);
-		add_node(&dest, 0);
-	}
-	dest->data = curr;
-	return (1);
+		return ;
+	curr_src = *src;
+	tmp = (*src)->data;
+	curr_dest->data = tmp;
+	remove_node(src, curr_src->data);
+	return ;
 }
 
 void	rotate_node(t_node **root)

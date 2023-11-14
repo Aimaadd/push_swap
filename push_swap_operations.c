@@ -12,22 +12,32 @@
 
 #include "./push_swap_lib.h"
 
-t_node	remove_node(t_node **root, int value)
+void	remove_node(t_node **root, t_node *del)
 {
 	t_node	*current;
 
-	current = *root;
-	while (current != NULL)
-	{
-		if (current -> data == value)
-		{
-			current->prev->next = current->next;
-			current->next->prev = current->prev;
-			return (*current);
-		}
-		current = current -> next;
-	}
-	return (*current);
+	if (*root == NULL || del == NULL)
+		return ;
+	if (*root == del)
+	*root = del->next;
+	if (del->next != NULL)
+		del->next->prev = del->prev;
+	if (del->prev != NULL)
+		del->prev->next = del->next;
+	free (del);
+	return ;
+	// current = *root;
+	// while (current != NULL)
+	// {
+	// 	if (current -> data == value)
+	// 	{
+	// 		current->prev->next = current->next;
+	// 		current->next->prev = current->prev;
+	// 		return (*current);
+	// 	}
+	// 	current = current -> next;
+	// }
+	// return (*current);
 }
 
 void	sa_swap(t_node **root)
@@ -53,13 +63,17 @@ void	push_node(t_node **src, t_node **dest)
 
 	if (!src)
 		return ;
-	if (!dest)
-		return ;
-	curr_src = *src;
+	printf("%d\n", (*src)->data);
 	tmp = (*src)->data;
-	curr_dest->data = tmp;
-	remove_node(src, curr_src->data);
-	return ;
+	remove_node(src, *src);
+	if (!dest)
+		add_node(dest, tmp);
+	else
+		insert_start(dest, tmp);
+
+	// curr_dest = tmp;
+	// remove_node(src, *src);
+	// return ;
 }
 
 void	rotate_node(t_node **root)
@@ -92,6 +106,17 @@ void	sa_swap_nodes(t_node **root)
 		next_y->prev = curr_x;
 	last->next = curr_y;
 	*root = curr_y;
+}
+
+void	insert_start(t_node **head, int data)
+{
+	t_node	*new_node;
+
+	new_node = (t_node *)malloc(sizeof(t_node));
+	new_node->data = data;
+	new_node->next = *head;
+	new_node->prev = NULL;
+	*head = new_node;
 }
 /*
 Je voudrais que la root soit en fin de liste et que last soit en 

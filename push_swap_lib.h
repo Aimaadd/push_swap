@@ -32,6 +32,7 @@ void	printit(t_node	*root);
 void	sa_swap(t_node **root);
 void	push_node(t_node **src, t_node **dest);
 void	pop_first(t_node **root);
-t_node	remove_node(t_node **root, int value);
+void	remove_node(t_node **root, t_node *del);
+void	insert_start(t_node **head, int data);
 
 #endif

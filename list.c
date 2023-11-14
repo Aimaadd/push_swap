@@ -26,18 +26,13 @@ int	main(void)
 		return (1);
 	if (!add_node(&stack_a, 144))
 		return (1);
-	if (!add_node(&stack_b, 0))
-		return (1);
-	printit(stack_a);
-	sa_swap_nodes(&stack_a);
-	printf("----swap-----\n");
 	printit(stack_a);
 	printf("stack a2\n");
 	push_node(&stack_a, &stack_b);
-	printit(stack_a);
+	// printit(stack_a);
 	printf("STACK B\n");
 	printit(stack_b);
 	printf("______\n");
-	// printit(stack_a);
+	printit(stack_a);
 	return (0);
 }

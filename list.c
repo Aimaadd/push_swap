@@ -26,13 +26,20 @@ int	main(void)
 		return (1);
 	if (!add_node(&stack_a, 144))
 		return (1);
+	if (!add_node(&stack_a, 773))
+		return (1);	
+	printf("stack A\n");
 	printit(stack_a);
-	printf("stack a2\n");
-	push_node(&stack_a, &stack_b);
+	printf("stack B\n");
+	// printit(stack_b);
+	// push_node(&stack_a, &stack_b);
+	// push_node(&stack_a, &stack_b);
+	// push_node(&stack_a, &stack_b);
 	// printit(stack_a);
-	printf("STACK B\n");
-	printit(stack_b);
-	printf("______\n");
+	// printf("STACK B\n");
+	// printit(stack_b);
+	reverse_rotate(&stack_a);
+	printf("_stack a_\n");
 	printit(stack_a);
 	return (0);
 }

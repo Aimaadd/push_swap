@@ -49,7 +49,6 @@ void	sa_swap(t_node **root)
 	curr_x = *root;
 	curr_y = curr_x->next;
 	tmp = curr_x -> data;
-	printf("head tmp : %d\n", tmp);
 	curr_x -> data = curr_y -> data;
 	curr_y -> data = tmp;
 	printit(*root);
@@ -61,19 +60,14 @@ void	push_node(t_node **src, t_node **dest)
 	t_node	*curr_dest;
 	int		tmp;
 
-	if (!src)
+	if (is_empty(*src) == 1)
 		return ;
-	printf("%d\n", (*src)->data);
 	tmp = (*src)->data;
 	remove_node(src, *src);
-	if (!dest)
+	if (is_empty(*dest) == 0)
 		add_node(dest, tmp);
 	else
 		insert_start(dest, tmp);
-
-	// curr_dest = tmp;
-	// remove_node(src, *src);
-	// return ;
 }
 
 void	rotate_node(t_node **root)
@@ -122,3 +116,54 @@ void	insert_start(t_node **head, int data)
 Je voudrais que la root soit en fin de liste et que last soit en 
 debut de liste
 */
+// void rotate_list(t_node **src) 
+// {
+// 	t_node *current;
+//     t_node *tmp;
+	
+// 	current = *src;
+// 	tmp = NULL;
+// 	if (*src == NULL)
+//         return;
+//     do {
+//         tmp = current->prev;
+//         current->prev = current->next;
+//         current->next = tmp;
+
+//         current = current->prev;
+//     } while (current != *src);
+
+//     *src = tmp->prev;
+// }
+
+void rotate(t_node **src)
+{
+
+    t_node *current = *src;
+
+    if (*src == NULL || (*src)->next == *src)
+        return;
+    *src = (*src)->next;
+    current->next->prev = current->prev;
+    current->prev->next = current->next;
+    current->prev = (*src)->prev;
+    current->next = *src;
+
+    (*src)->prev->next = current;
+    (*src)->prev = current;
+}
+
+void reverse_rotate(t_node **src)
+{
+    t_node *current = *src;
+
+    if (*src == NULL || (*src)->next == *src)
+        return;
+    *src = (*src)->prev;
+    current->prev->next = current->next;
+    current->next->prev = current->prev;
+    current->prev = *src;
+    current->next = (*src)->next;
+    (*src)->next->prev = current;
+    (*src)->next = current;
+}

@@ -26,3 +26,10 @@ int	list_len(t_node *root)
 	}
 	return (i);
 }
+
+int	is_empty(t_node *src)
+{
+	if (!src)
+		return (1);
+	return (0);
+}

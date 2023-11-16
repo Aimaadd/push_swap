@@ -34,5 +34,9 @@ void	push_node(t_node **src, t_node **dest);
 void	pop_first(t_node **root);
 void	remove_node(t_node **root, t_node *del);
 void	insert_start(t_node **head, int data);
+int		is_empty(t_node *src);
+void	rotate_list(t_node **src);
+void 	rotate(t_node **src);
+void 	reverse_rotate(t_node **src);
 
 #endif

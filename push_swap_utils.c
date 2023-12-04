@@ -25,30 +25,54 @@ t_node	*get_last_node(t_node *root)
 	}
 	return (current);
 }
+// ANCIEN ADD NODE
+// t_node	*add_node(t_node **root, int value)
+// {
+// 	t_node	*node;
+// 	t_node	*last_node;
 
-t_node	*add_node(t_node **root, int value)
-{
-	t_node	*node;
-	t_node	*last_node;
+// 	node = create_node(value);
+// 	if (!node)
+// 		return (NULL);
+// 	if (!*root)
+// 	{
+// 		*root = node;
+// 		node->next = node;
+// 		node->prev = node;
+// 		return (node);
+// 	}
+// 	last_node = get_last_node(*root);
+// 	node->next = *root;
+// 	node->prev = last_node;
+// 	last_node->next = node;
+// 	(*root)->prev = node;
+// 	*root = node;
+// 	return (node);
+// }
 
-	node = create_node(value);
-	if (!node)
-		return (NULL);
-	if (!*root)
-	{
-		*root = node;
-		node->next = node;
-		node->prev = node;
-		return (node);
-	}
-	last_node = get_last_node(*root);
-	node->next = *root;
-	node->prev = last_node;
-	last_node->next = node;
-	(*root)->prev = node;
-	*root = node;
-	return (node);
+t_node *add_node(t_node **root, int value) {
+    t_node *node;
+    t_node *last_node;
+
+    node = create_node(value);
+    if (!node) return NULL;
+
+    if (!*root) {
+        *root = node;
+        node->next = node;
+        node->prev = node;
+        return node;
+    }
+
+    last_node = get_last_node(*root);
+    node->next = *root;
+    node->prev = last_node;
+    last_node->next = node;
+    (*root)->prev = node;
+
+    return node;
 }
+
 
 t_node	*create_node(int value)
 {

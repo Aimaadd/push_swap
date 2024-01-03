@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abentaye <abentaye@student.s19.be>         +#+  +:+       +#+        */
+/*   By: abentaye <abentaye@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:23:12 by abentaye          #+#    #+#             */
-/*   Updated: 2024/01/03 14:23:14 by abentaye         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:55:59 by abentaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ void	index_stack(t_list **stack)
 		head = get_next_min(stack);
 	}
 }
-

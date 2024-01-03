@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   t_list.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abentaye <abentaye@student.s19.be>         +#+  +:+       +#+        */
+/*   By: abentaye <abentaye@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:23:21 by abentaye          #+#    #+#             */
-/*   Updated: 2024/01/03 14:23:24 by abentaye         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:55:37 by abentaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,16 +83,15 @@ int	ft_lstsize(t_list *head)
 }
 
 // Prints the Linked List
-void	printList(t_list *head)
-{
-	t_list	*tmp;
+// void	printList(t_list *head)
+// {
+// 	t_list	*tmp;
 
-	tmp = head;
-	while (tmp != NULL)
-	{
-		ft_putnbr_fd(tmp->value, 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
-	}
-}
-
+// 	tmp = head;
+// 	while (tmp != NULL)
+// 	{
+// 		ft_putnbr_fd(tmp->value, 1);
+// 		ft_putendl_fd("", 1);
+// 		tmp = tmp->next;
+// 	}
+// }

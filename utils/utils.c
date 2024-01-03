@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abentaye <abentaye@student.s19.be>         +#+  +:+       +#+        */
+/*   By: abentaye <abentaye@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:23:29 by abentaye          #+#    #+#             */
-/*   Updated: 2024/01/03 14:23:31 by abentaye         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:56:32 by abentaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,26 +60,26 @@ int	get_distance(t_list **stack, int index)
 	return (distance);
 }
 
-void	make_top(t_list **stack, int distance)
-{
-	t_list	*head;
-	int		tmp;
+// void	make_top(t_list **stack, int distance)
+// {
+// 	t_list	*head;
+// 	int		tmp;
 
-	if (distance == 0)
-		return ;
-	head = *stack;
-	tmp = ft_lstsize(head) - distance;
-	if (distance <= (ft_lstsize(head) / 2))
-	{
-		while (distance-- > 0)
-			ra(stack);
-	}
-	else
-	{
-		while (tmp-- > 0)
-			rra(stack);
-	}
-}
+// 	if (distance == 0)
+// 		return ;
+// 	head = *stack;
+// 	tmp = ft_lstsize(head) - distance;
+// 	if (distance <= (ft_lstsize(head) / 2))
+// 	{
+// 		while (distance-- > 0)
+// 			ra(stack);
+// 	}
+// 	else
+// 	{
+// 		while (tmp-- > 0)
+// 			rra(stack);
+// 	}
+// }
 
 void	free_stack(t_list **stack)
 {

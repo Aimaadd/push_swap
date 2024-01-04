@@ -6,7 +6,7 @@
 /*   By: abentaye <abentaye@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:03:37 by abentaye          #+#    #+#             */
-/*   Updated: 2024/01/03 17:20:41 by abentaye         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:58:26 by abentaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,10 @@ void	simple_sort(t_list **stack_a, t_list **stack_b)
 		sort_4(stack_a, stack_b);
 	else if (size == 5)
 		sort_5(stack_a, stack_b);
+}
+
+void	needed_more(t_list **stack_a)
+{
+	sa(stack_a);
+	rra(stack_a);
 }

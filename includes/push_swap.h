@@ -6,7 +6,7 @@
 /*   By: abentaye <abentaye@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:33:22 by abentaye          #+#    #+#             */
-/*   Updated: 2024/01/03 17:22:07 by abentaye         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:00:17 by abentaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ void	ft_free(char **str);
 void	radix_sort(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
 void	index_stack(t_list **stack);
+int		get_min(t_list **stack, int val);
+void	needed_lines(t_list **stack_a);
+void	needed_more(t_list **stack_a);
 void	sort_5(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);
 void	sort_4(t_list **stack_a, t_list **stack_b);

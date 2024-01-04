@@ -6,11 +6,11 @@
 /*   By: abentaye <abentaye@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:22:37 by abentaye          #+#    #+#             */
-/*   Updated: 2024/01/03 16:53:46 by abentaye         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:58:46 by abentaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	init_stack(t_list **stack, int argc, char **argv)
 {

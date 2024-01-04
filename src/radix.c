@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abentaye <abentaye@student.s19.be>         +#+  +:+       +#+        */
+/*   By: abentaye <abentaye@student.s19.be >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:22:46 by abentaye          #+#    #+#             */
-/*   Updated: 2024/01/03 14:22:50 by abentaye         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:59:17 by abentaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	get_max_bits(t_list **stack)
 {
